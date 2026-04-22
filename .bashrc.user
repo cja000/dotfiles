@@ -1,0 +1,98 @@
+#######################################################
+# git
+#######################################################
+if [ -f /etc/bash_completion.d/git ]; then
+    . /etc/bash_completion.d/git
+fi
+
+#######################################################
+# Enviroment
+#######################################################
+# My aliases
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+
+# Terminal
+export TERM='xterm-256color'
+
+# Colors for grep matching
+export GREP_COLORS='mt=1;34:fn=1;36'
+
+# Colors for ls
+eval "$(dircolors -b ~/.bash_dir_colors)"
+
+# Color for manpages in less makes manpages a little easier to read
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
+# Set Vim as my default editor
+export EDITOR=nvim
+export VISUAL=gvim
+
+# Ignore case during tab completion.
+bind 'set completion-ignore-case on'
+# Show auto-completion list automatically, without double tab
+bind "set show-all-if-ambiguous On"
+
+# History
+# Expand the history size
+export HISTFILESIZE=
+export HISTSIZE=
+# Date in the history
+export HISTTIMEFORMAT="[%F %T] "
+# Exclude commands from the history
+#export HISTIGNORE="ls:ps:history"
+# Change history filename
+#export HISTFILE=~/.custom_file
+# Don't put duplicate lines in the history and do not add lines that start with a space
+export HISTCONTROL=erasedups:ignoredups:ignorespace
+
+# Bash Tab Completion Expansion
+shopt -s direxpand
+
+# Enable ** for recursive glob
+shopt -s globstar
+
+# Check the window size after each command and, if necessary, update the values of LINES and COLUMNS
+shopt -s checkwinsize
+
+# Causes bash to append to history instead of overwriting it so if you start a new terminal, you have old session history
+shopt -s histappend
+PROMPT_COMMAND='history -a'
+
+# (core file size) don't want any coredumps
+ulimit -S -c 0
+# Mask
+umask 2
+# No shell timeout
+unset TMOUT
+
+# Prompt
+__git_current_branch() {
+    BRANCH=$(git rev-parse --abbrev-ref HEAD >& /dev/null && echo "(`git rev-parse --abbrev-ref HEAD`)")
+    if [ -n "$BRANCH" ]; then
+        echo -ne "[$BRANCH]"
+    fi
+}
+PS1='\[\033[07;33;01m\]\h\[\033[00m\] [\d \t]\n\[\033[01;34m\]\w\[\033[00m\]\n$(__git_current_branch)\$ '
+unset rprompt
+
+#######################################################
+# SPECIAL FUNCTIONS
+#######################################################
+# Load more functions
+. ~/.bash_functions
+export -f pathremove pathprepend pathappend
+
+#######################################################
+# Clean duplicates from global variables
+#######################################################
+# Falla al pasar de tcsh a bash una vez echo el setup_dpi.
+# ¿Orden de algun path?
+# remove_dup_from_var PATH
+# remove_dup_from_var PYTHONPATH
+# remove_dup_from_var MANPATH

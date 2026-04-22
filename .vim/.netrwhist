@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/lab/epg_st_sandbox/reecaag/pcg/jcat_logs/202102/20210204100337'
+let g:netrw_dirhist_2='/lab/epg_st_sandbox/reecaag/pcg/jcat_logs/202102/20210204100337/PcgAo_FT_CLI_DPI_Heuristics_alarm_LoadNormal_Small_MesosA_5m_20210204_100357_712'
+let g:netrw_dirhist_3='/lab/epg_st_sandbox/reecaag/pcg/jcat_logs/202102/20210204100337/PcgAo_FT_CLI_DPI_Heuristics_alarm_LoadNormal_Small_MesosA_5m_20210204_100357_712/kubectl'
+let g:netrw_dirhist_4='/lab/epg_st_sandbox/reecaag/pcg/jcat_logs/202102/20210204100337/PcgAo_FT_CLI_DPI_Heuristics_alarm_LoadNormal_Small_MesosA_5m_20210204_100357_712/kubectl/kube_info'
+let g:netrw_dirhist_5='/lab/epg_st_sandbox/reecaag/pcg/PCPB-12628_Alert_when_configured_Heuristics_package_is_not_loaded_PCG_/jcat_logs/20210301105319_1a_prueba_con_outline'
+let g:netrw_dirhist_6='/lab/epg_st_sandbox/reecaag/pcg/PCPB-12628_Alert_when_configured_Heuristics_package_is_not_loaded_PCG_/jcat_logs/20210301105319_1a_prueba_con_outline/PcgAo_FT_CLI_DPI_Heuristics_alarm_LoadNormal_Small_MesosA_5m_20210301_105337_502'
+let g:netrw_dirhist_7='/lab/epg_st_sandbox/reecaag/pcg/PCPB-12628_Alert_when_configured_Heuristics_package_is_not_loaded_PCG_/jcat_logs/20210301105319_1a_prueba_con_outline'
