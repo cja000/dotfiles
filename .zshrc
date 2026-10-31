@@ -120,6 +120,3 @@ umask 2
 
 # Load more functions
 . ~/.bash_functions
-
-# 2024/04 increased memory to run Java?????
-export JAVA_TOOL_OPTIONS='-Xmx1000m'
