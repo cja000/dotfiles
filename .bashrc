@@ -87,12 +87,3 @@ unset rprompt
 # Load more functions
 . ~/.bash_functions
 export -f pathremove pathprepend pathappend
-
-#######################################################
-# Clean duplicates from global variables
-#######################################################
-# Falla al pasar de tcsh a bash una vez echo el setup_dpi.
-# ¿Orden de algun path?
-# remove_dup_from_var PATH
-# remove_dup_from_var PYTHONPATH
-# remove_dup_from_var MANPATH
